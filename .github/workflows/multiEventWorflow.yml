@@ -1,0 +1,25 @@
+name: Multi Event Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - production
+
+  pull_request:
+    branches:
+      - main
+      - production
+
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run on push
+        run: echo "Hello, world! on push"
+
+  on-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run on pull request
+        run: echo "Hello, world! on pull request"
